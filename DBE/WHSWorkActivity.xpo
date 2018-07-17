@@ -1,0 +1,151 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: DBE
+
+; Microsoft Dynamics AX Enumtype : WHSWorkActivity unloaded
+; --------------------------------------------------------------------------------
+  ENUMTYPEVERSION 1
+  
+  ENUMTYPE #WHSWorkActivity
+    PROPERTIES
+      Name                #WHSWorkActivity
+      Label               #@WAX1106
+      Help                #@WAX1092
+      ConfigurationKey    #WHSandTMS
+      UseEnumValue        #Yes
+      Origin              #{9C74CB4B-5AA9-4C9F-B429-F76B57ACD2E8}
+    ENDPROPERTIES
+    
+    TYPEELEMENTS
+      #None
+      PROPERTIES
+        Name                #None
+        Label               #@SYS80253
+        EnumValue           #0
+      ENDPROPERTIES
+      
+      #LogOff
+      PROPERTIES
+        Name                #LogOff
+        Label               #@WAX1091
+        EnumValue           #1
+      ENDPROPERTIES
+      
+      #About
+      PROPERTIES
+        Name                #About
+        Label               #@WAX1090
+        EnumValue           #2
+      ENDPROPERTIES
+      
+      #ChangeWarehouse
+      PROPERTIES
+        Name                #ChangeWarehouse
+        Label               #@WAX1089
+        EnumValue           #3
+      ENDPROPERTIES
+      
+      #InquiryLocation
+      PROPERTIES
+        Name                #InquiryLocation
+        Label               #@WAX621
+        EnumValue           #4
+      ENDPROPERTIES
+      
+      #InquiryLicensePlate
+      PROPERTIES
+        Name                #InquiryLicensePlate
+        Label               #@WAX620
+        EnumValue           #5
+      ENDPROPERTIES
+      
+      #StartProdOrder
+      PROPERTIES
+        Name                #StartProdOrder
+        Label               #@WAX1683
+        EnumValue           #6
+      ENDPROPERTIES
+      
+      #ProductionScrap
+      PROPERTIES
+        Name                #ProductionScrap
+        Label               #@WAX2260
+        EnumValue           #7
+      ENDPROPERTIES
+      
+      #ProdLastPallet
+      PROPERTIES
+        Name                #ProdLastPallet
+        Label               #@WAX2573
+        EnumValue           #8
+      ENDPROPERTIES
+      
+      #InquiryItem
+      PROPERTIES
+        Name                #InquiryItem
+        Label               #@WAX2999
+        EnumValue           #9
+      ENDPROPERTIES
+      
+      #ReprintLabel
+      PROPERTIES
+        Name                #ReprintLabel
+        Label               #@WAX3177
+        EnumValue           #10
+      ENDPROPERTIES
+      
+      #LicensePlateBuild
+      PROPERTIES
+        Name                #LicensePlateBuild
+        Label               #@WAX539
+        EnumValue           #11
+      ENDPROPERTIES
+      
+      #LicensePlateBreak
+      PROPERTIES
+        Name                #LicensePlateBreak
+        Label               #@WAX3897
+        EnumValue           #12
+      ENDPROPERTIES
+      
+      #DriverCheckIn
+      PROPERTIES
+        Name                #DriverCheckIn
+        Label               #@WAX4153
+        EnumValue           #13
+      ENDPROPERTIES
+      
+      #DriverCheckOut
+      PROPERTIES
+        Name                #DriverCheckOut
+        Label               #@WAX4154
+        EnumValue           #14
+      ENDPROPERTIES
+      
+      #FlushNumSeqCache
+      PROPERTIES
+        Name                #FlushNumSeqCache
+        Label               #@WAX5553
+        EnumValue           #15
+      ENDPROPERTIES
+      
+      #ChangeBatchDisposition
+      PROPERTIES
+        Name                #ChangeBatchDisposition
+        Label               #@WAX5575
+        EnumValue           #16
+      ENDPROPERTIES
+      
+      #GOA_WHSHandheldOutgoingShipments
+      PROPERTIES
+        Name                #GOA_WHSHandheldOutgoingShipments
+        Label               #OutgoingShipments
+        EnumValue           #32
+      ENDPROPERTIES
+      
+    ENDTYPEELEMENTS
+  ENDENUMTYPE
+  
+
+***Element: END

@@ -1,0 +1,83 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: DBT
+
+; Microsoft Dynamics AX Table : GOA_tmpCargoShipmentNotCompl unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  TABLE #GOA_tmpCargoShipmentNotCompl
+    EnforceFKRelation 1
+    PROPERTIES
+      Name                #GOA_tmpCargoShipmentNotCompl
+      TableType           #TempDB
+      CreateRecIdIndex    #Yes
+      PrimaryIndex        #SurrogateKey
+      ClusterIndex        #SurrogateKey
+      Origin              #{C85E5FFE-BA12-4E2D-8E61-EACD2F50CE4F}
+    ENDPROPERTIES
+    
+    FIELDS
+      FIELD #CargoShipmentId
+        STRING
+        PROPERTIES
+          Name                #CargoShipmentId
+          Mandatory           #Yes
+          AllowEdit           #No
+          Table               #GOA_tmpCargoShipmentNotCompl
+          Origin              #{F4240A84-83E1-4A76-942C-53DDD4F39904}
+          ExtendedDataType    #GOA_CargoShipmentId
+        ENDPROPERTIES
+        
+      FIELD #DeliveryNameAlias
+        STRING
+        PROPERTIES
+          Name                #DeliveryNameAlias
+          Table               #GOA_tmpCargoShipmentNotCompl
+          Origin              #{E06C1501-19E1-4909-832D-A40B4C2D1EEA}
+          ExtendedDataType    #NameAlias
+          StringSize          #20
+        ENDPROPERTIES
+        
+      FIELD #NumberOfPallets
+        INT
+        PROPERTIES
+          Name                #NumberOfPallets
+          Table               #GOA_tmpCargoShipmentNotCompl
+          Origin              #{3D39D2BD-BE37-4CB6-8F19-A0FEC3C66960}
+          ExtendedDataType    #GOA_NumberOfPallets
+        ENDPROPERTIES
+        
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    INDICES
+    ENDINDICES
+    FULLTEXTINDICES
+    ENDFULLTEXTINDICES
+    REFERENCES
+    ENDREFERENCES
+    
+    DELETEACTIONS
+    ENDDELETEACTIONS
+    
+    METHODS
+      SOURCE #VOL_Version
+        #public static FreeTxt VOL_Version()
+        #{
+        #    FreeTxt versionStr;
+        #    str     cr = '\n';
+        #    ;
+        #    versionStr += @'GOA_00057/ag/16.07.2018 - GOA_00057_Handheld_Outgoing_shipments / Handheld query: Outgoing shipments' + cr;
+        #
+        #
+        #    return versionStr;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDTABLE
+  
+
+***Element: END

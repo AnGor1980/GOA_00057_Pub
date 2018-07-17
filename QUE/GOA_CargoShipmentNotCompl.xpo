@@ -1,0 +1,146 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: QUE
+
+; Microsoft Dynamics AX Query: GOA_CargoShipmentNotCompl unloaded
+; --------------------------------------------------------------------------------
+VERSION 31
+
+QUERY #GOA_CargoShipmentNotCompl
+  PROPERTIES
+    Name                #GOA_CargoShipmentNotCompl
+    Version             #29
+    NextUniqueId        #1003
+    Origin              #{2EC64B33-5823-4D00-AE35-808DF9940B8A}
+  ENDPROPERTIES
+  
+  METHODS
+    SOURCE #VOL_Version
+      #public static FreeTxt VOL_Version()
+      #{
+      #    FreeTxt versionStr;
+      #    str     cr = '\n';
+      #    ;
+      #    versionStr += @'GOA_00057/ag/16.07.2018 - GOA_00057_Handheld_Outgoing_shipments / Handheld query: Outgoing shipments' + cr;
+      #
+      #
+      #    return versionStr;
+      #}
+    ENDSOURCE
+    SOURCE #classDeclaration
+      #public class QueryRun extends ObjectRun
+      #{
+      #}
+    ENDSOURCE
+  ENDMETHODS
+  BLOCKS
+    BLOCK #GOA_CargoShipmentTable
+      PROPERTIES
+        Name                #GOA_CargoShipmentTable_1
+        Table               #GOA_CargoShipmentTable
+        UniqueId            #1000
+        FetchMode           #1:1
+      ENDPROPERTIES
+      
+      FIELDLIST
+        PROPERTIES
+          Dynamic             #No
+        ENDPROPERTIES
+        
+        FIELD #CargoShipmentId
+        FIELD #NumberOfPallets
+        FIELD #Transporter
+      ENDFIELDLIST
+      SORTING
+      ENDSORTING
+      LINES
+        LINE #Status
+        PROPERTIES
+          Name                #Status
+          Table               #GOA_CargoShipmentTable
+          Field               #Status
+          Value               #!=Completed
+        ENDPROPERTIES
+        
+      ENDLINES
+      BLOCKS
+        BLOCK #LogisticsPostalAddress
+          PROPERTIES
+            Name                #LogisticsPostalAddress_1
+            Table               #LogisticsPostalAddress
+            UniqueId            #1001
+            FetchMode           #1:1
+            Relations           #Yes
+          ENDPROPERTIES
+          
+          FIELDLIST
+            PROPERTIES
+              Dynamic             #No
+            ENDPROPERTIES
+            
+            FIELD #City
+            FIELD #CountryRegionId
+          ENDFIELDLIST
+          SORTING
+          ENDSORTING
+          LINES
+          ENDLINES
+          BLOCKS
+          ENDBLOCKS
+          ASSOCIATIONS
+            ASSOCIATION
+              FOREIGNKEYRELATION #GOA_CargoShipmentTable_DeliveryAddress
+          ENDASSOCIATIONS
+        ENDBLOCK
+        BLOCK #DirPartyTable
+          PROPERTIES
+            Name                #DirPartyTable_1
+            Table               #DirPartyTable
+            UniqueId            #1002
+            FetchMode           #1:1
+            Relations           #Yes
+          ENDPROPERTIES
+          
+          FIELDLIST
+            PROPERTIES
+              Dynamic             #No
+            ENDPROPERTIES
+            
+            FIELD #NameAlias
+          ENDFIELDLIST
+          SORTING
+          ENDSORTING
+          LINES
+          ENDLINES
+          BLOCKS
+          ENDBLOCKS
+          ASSOCIATIONS
+            ASSOCIATION
+              FOREIGNKEYRELATION #DirPartyTable
+          ENDASSOCIATIONS
+        ENDBLOCK
+      ENDBLOCKS
+      GROUPBY
+      ENDGROUPBY
+      HAVING
+      ENDHAVING
+      ORDERBY
+      ENDORDERBY
+    ENDBLOCK
+  ENDBLOCKS
+  DEPENDENTS
+    DEPENDENT
+      PROPERTIES
+        Name                #GOA_CargoShipmentNotComplView
+        DependentType       #View
+      ENDPROPERTIES
+      
+      Id 110159
+  ENDDEPENDENTS
+  COMPOSITEQUERIES
+  ENDCOMPOSITEQUERIES
+ENDQUERY
+
+
+***Element: END

@@ -1,0 +1,230 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: CLS
+
+; Microsoft Dynamics AX Class: GOA_WHSHandheldOutgoingShipments unloaded
+; --------------------------------------------------------------------------------
+  CLSVERSION 1
+  
+  CLASS #GOA_WHSHandheldOutgoingShipments
+    PROPERTIES
+      Name                #GOA_WHSHandheldOutgoingShipments
+      Extends             #GOA_WHSWorkExecuteDisplay
+      Origin              #{6A27DE76-5007-4917-A5B8-1A3AA78B80FC}
+    ENDPROPERTIES
+    
+    METHODS
+      SOURCE #VOL_Version
+        #public static FreeTxt VOL_Version()
+        #{
+        #    FreeTxt versionStr;
+        #    str     cr = '\n';
+        #    ;
+        #    versionStr += @'GOA_00057/ag/16.07.2018 - GOA_00057_Handheld_Outgoing_shipments / Handheld query: Outgoing shipments' + cr;
+        #
+        #
+        #    return versionStr;
+        #}
+      ENDSOURCE
+      SOURCE #construct
+        #static GOA_WHSHandheldOutgoingShipments construct()
+        #{
+        #    GOA_WHSHandheldOutgoingShipments   WHSHandheldOutgoingShipments = new GOA_WHSHandheldOutgoingShipments();
+        #
+        #    return WHSHandheldOutgoingShipments;
+        #}
+      ENDSOURCE
+      SOURCE #buildResult
+        #private container buildResult(container _con)
+        #{
+        #    _con = this.createHeaderContent(_con, '', tmpCargoShipmentNotCompl);
+        #    while select tmpCargoShipmentNotCompl
+        #    {
+        #        _con = this.createTableContent(_con, tmpCargoShipmentNotCompl);
+        #    }
+        #    _con = this.addOkButton(_con, 1);
+        #    _con = this.addBackButton(_con, 1);
+        #
+        #    step = GOA_Steps_OutgoingShipments::Filter;
+        #
+        #    return _con;
+        #}
+      ENDSOURCE
+      SOURCE #fillTmpCargoShipmentNotCompl
+        #private void fillTmpCargoShipmentNotCompl()
+        #{
+        #    Query           query = new Query(queryStr(GOA_CargoShipmentNotCompl));
+        #    QueryRun        qr;
+        #    QueryBuildRange qbr;
+        #
+        #    GOA_CargoShipmentTable    cargoShipmentTable;
+        #    DirPartyTable               dirPartyTable;
+        #    LogisticsPostalAddress      logisticsPostalAddress;
+        #
+        #    str transportCompany = pass.lookupStr(#TransportCompany);
+        #    str deliveryParty = pass.lookupStr(#DeliveryParty);
+        #    str city = pass.lookupStr(#City);
+        #    str country = pass.lookupStr(#Country);
+        #
+        #    if(transportCompany)
+        #    {
+        #        qbr = query.dataSourceTable(tableNum(GOA_CargoShipmentTable)).addRange(fieldNum(GOA_CargoShipmentTable, Transporter));
+        #        qbr.value(SysQuery::valueLike(transportCompany));
+        #    }
+        #
+        #    if(deliveryParty)
+        #    {
+        #        qbr = query.dataSourceTable(tableNum(DirPartyTable)).addRange(fieldNum(DirPartyTable, NameAlias));
+        #        qbr.value(SysQuery::valueLike(deliveryParty));
+        #    }
+        #
+        #    if(city)
+        #    {
+        #        qbr = query.dataSourceTable(tableNum(LogisticsPostalAddress)).addRange(fieldNum(LogisticsPostalAddress, City));
+        #        qbr.value(SysQuery::valueLike(city));
+        #    }
+        #
+        #    if(country)
+        #    {
+        #        qbr = query.dataSourceTable(tableNum(LogisticsPostalAddress)).addRange(fieldNum(LogisticsPostalAddress, CountryRegionId));
+        #        qbr.value(SysQuery::value(country));
+        #    }
+        #
+        #    query.dataSourceTable(tableNum(GOA_CargoShipmentTable)).addOrderByField(fieldNum(GOA_CargoShipmentTable, CargoShipmentId));
+        #
+        #    qr = new QueryRun(query);
+        #
+        #    ttsBegin;
+        #    while (qr.next())
+        #    {
+        #        cargoShipmentTable      = qr.get(tableNum(GOA_CargoShipmentTable));
+        #        dirPartyTable           = qr.get(tableNum(DirPartyTable));
+        #
+        #        tmpCargoShipmentNotCompl.clear();
+        #        tmpCargoShipmentNotCompl.CargoShipmentId    = cargoShipmentTable.CargoShipmentId;
+        #        tmpCargoShipmentNotCompl.DeliveryNameAlias  = dirPartyTable.NameAlias;
+        #        tmpCargoShipmentNotCompl.NumberOfPallets    = cargoShipmentTable.NumberOfPallets;
+        #        tmpCargoShipmentNotCompl.insert();
+        #    }
+        #    ttsCommit;
+        #}
+      ENDSOURCE
+      SOURCE #getCountriesList
+        #private str getCountriesList()
+        #{
+        #    GOA_CargoShipmentNotComplView   cargoShipmentNotComplView;
+        #    str ret;
+        #
+        #    while select CountryRegionId from cargoShipmentNotComplView
+        #        group by cargoShipmentNotComplView.CountryRegionId
+        #    {
+        #        ret += strLen(ret)?'||':'';
+        #        ret += strFmt("%1",cargoShipmentNotComplView.CountryRegionId);
+        #    }
+        #    ret = strFmt("%1||%2",'',ret);
+        #    return ret;
+        #}
+      ENDSOURCE
+      SOURCE #buildFilter
+        #/*private*/ container buildFilter()
+        #{
+        #    container ret;
+        #    str transportCompaniesList = this.getCountriesList();
+        #
+        #    ret += [this.buildControl(#RFText, #TransportCompany, '@FLX73297', 1, '', extendedTypeNum(NameAlias), '', 1)];
+        #    ret += [this.buildControl(#RFText, #DeliveryParty, '@FLX74372', 1, '', extendedTypeNum(NameAlias), '', 1)];
+        #    ret += [this.buildControl(#RFText, #City, '@SYS181387', 1, '', extendedTypeNum(AddressCity), '', 1)];
+        #    ret += [this.buildControl(#RFCombobox, #Country, "@FLX61690", 1, transportCompaniesList, #WHSRFUndefinedDataType, '', 1)];
+        #
+        #    ret = this.addOkButton(ret, 1);
+        #    ret = this.addBackButton(ret, 1);
+        #
+        #    return ret;
+        #}
+      ENDSOURCE
+      SOURCE #setPassValues
+        #// GOA_00056/ag/20.06.2018 - GOA_00051_ShipmentGateOutMobileVisit / One Visit more Shipment gate-out Mobile
+        #
+        #public void setPassValues(container _con)
+        #{
+        #    int     i;
+        #    str     conName;
+        #
+        #    for (i = 1; i < conLen(_con); i++)
+        #    {
+        #        conName    = conPeek(conPeek(_con, i), #name);
+        #
+        #        switch (conName)
+        #        {
+        #            case #TransportCompany:
+        #            case #DeliveryParty:
+        #            case #City:
+        #            case #Country:
+        #                 pass.insert(conName, conPeek(conPeek(_con, i), #data));
+        #                 break;
+        #        }
+        #    }
+        #}
+      ENDSOURCE
+      SOURCE #displayForm
+        #container displayForm(container _con, str _buttonClicked = '')
+        #{
+        #    container               ret = conNull();
+        #    container               con = _con;
+        #    int                     hasError = 0;
+        #    WHSRFPassthrough        fieldValues;
+        #    container               tmpFieldValues;
+        #    boolean                 complete;
+        #    int                     startInfologLine;
+        #
+        #    mode = WHSWorkExecuteMode::GOA_WHSHandheldOutgoingShipments;
+        #    pass = WHSRFPassthrough::create(conPeek(_con, 2));
+        #
+        #    hasError = this.hasError(_con);
+        #
+        #
+        #    startInfologLine = infologLine() + 1;
+        #
+        #    if (pass.exists(#UserId))
+        #    {
+        #        userId = pass.lookup(#UserId);
+        #        pass.insert(#Terminal, WHSWorkUserSession::find(UserId).VOL_TerminalId);
+        #    }
+        #
+        #    switch (step)
+        #    {
+        #        case GOA_Steps_OutgoingShipments::Filter:
+        #            ret = this.buildFilter();
+        #            step = GOA_Steps_OutgoingShipments::Result;
+        #            break;
+        #        case GOA_Steps_OutgoingShipments::Result:
+        #            ret = conNull();
+        #            this.setPassValues(con);
+        #            this.fillTmpCargoShipmentNotCompl();
+        #            ret = this.buildResult(ret);
+        #            break;
+        #        default:
+        #            break;
+        #    }
+        #
+        #    ret = this.updateModeStepPass(ret, mode, step, pass);
+        #
+        #    return ret;
+        #}
+      ENDSOURCE
+      SOURCE #classDeclaration
+        #class GOA_WHSHandheldOutgoingShipments extends GOA_WHSWorkExecuteDisplay
+        #{
+        #    GOA_tmpCargoShipmentNotCompl    tmpCargoShipmentNotCompl;
+        #    #define.Terminal('Terminal')
+        #    #define.TransportCompany('TransportCompany')
+        #    #define.DeliveryParty('DeliveryParty')
+        #    #define.City('City')
+        #    #define.Country('Country')
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDCLASS
+
+***Element: END

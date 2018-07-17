@@ -1,0 +1,132 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: VIE
+
+; Microsoft Dynamics AX View : GOA_CargoShipmentNotComplView unloaded
+; --------------------------------------------------------------------------------
+  TABLEVERSION 1
+  
+  VIEW #GOA_CargoShipmentNotComplView
+    PROPERTIES
+      Name                #GOA_CargoShipmentNotComplView
+      SaveDataPerCompany  #Yes
+      Origin              #{C61CC0F5-9752-4D36-97DF-F2287846B610}
+      Query               #GOA_CargoShipmentNotCompl
+    ENDPROPERTIES
+    
+    QUERY #Metadata
+      PROPERTIES
+        Name                #Metadata
+        Version             #1
+      ENDPROPERTIES
+      
+      BLOCKS
+      ENDBLOCKS
+      QUERY #GOA_CargoShipmentNotCompl
+      ENDQUERY
+      
+    ENDQUERY
+    
+    FIELDS
+      VIEWFIELD #CargoShipmentId
+        PROPERTIES
+          Name                #CargoShipmentId
+          Table               #GOA_CargoShipmentNotComplView
+          ExtendedDataType    #GOA_CargoShipmentId
+          StringSize          #10
+          DataSource          #GOA_CargoShipmentTable_1
+          DataField           #CargoShipmentId
+          Origin              #{2C595826-DB8B-4101-B9AE-93340E9ADA05}
+        ENDPROPERTIES
+        
+      ENDVIEWFIELD
+      
+      VIEWFIELD #NumberOfPallets
+        PROPERTIES
+          Type                #Integer
+          Name                #NumberOfPallets
+          Table               #GOA_CargoShipmentNotComplView
+          ExtendedDataType    #GOA_NumberOfPallets
+          StringSize          #(Memo)
+          DataSource          #GOA_CargoShipmentTable_1
+          DataField           #NumberOfPallets
+          Origin              #{B190C59B-27BD-4FB0-B813-713F3ED5CC3F}
+        ENDPROPERTIES
+        
+      ENDVIEWFIELD
+      
+      VIEWFIELD #City
+        PROPERTIES
+          Name                #City
+          Table               #GOA_CargoShipmentNotComplView
+          ExtendedDataType    #LogisticsAddressCity
+          StringSize          #140
+          DataSource          #LogisticsPostalAddress_1
+          DataField           #City
+          Origin              #{6E56F98F-B214-41B1-A03B-931B113663A5}
+        ENDPROPERTIES
+        
+      ENDVIEWFIELD
+      
+      VIEWFIELD #NameAlias
+        PROPERTIES
+          Name                #NameAlias
+          Table               #GOA_CargoShipmentNotComplView
+          ExtendedDataType    #NameAlias
+          StringSize          #20
+          DataSource          #DirPartyTable_1
+          DataField           #NameAlias
+          Origin              #{7367E1A9-DDF6-4B0A-B149-C6299B4645B2}
+        ENDPROPERTIES
+        
+      ENDVIEWFIELD
+      
+      VIEWFIELD #Transporter
+        PROPERTIES
+          Name                #Transporter
+          Table               #GOA_CargoShipmentNotComplView
+          ExtendedDataType    #VendName
+          StringSize          #140
+          DataSource          #GOA_CargoShipmentTable_1
+          DataField           #Transporter
+          Origin              #{BA6C5F5C-1D0C-430D-B296-153BE077FEF9}
+        ENDPROPERTIES
+        
+      ENDVIEWFIELD
+      
+      VIEWFIELD #CountryRegionId
+        PROPERTIES
+          Name                #CountryRegionId
+          Table               #GOA_CargoShipmentNotComplView
+          ExtendedDataType    #LogisticsAddressCountryRegionId
+          StringSize          #10
+          DataSource          #LogisticsPostalAddress_1
+          DataField           #CountryRegionId
+          Origin              #{0E2E44B9-024B-40BE-A593-8F19B0D3E9F5}
+        ENDPROPERTIES
+        
+      ENDVIEWFIELD
+      
+    ENDFIELDS
+    GROUPS
+    ENDGROUPS
+    
+    METHODS
+      SOURCE #VOL_Version
+        #public static FreeTxt VOL_Version()
+        #{
+        #    FreeTxt versionStr;
+        #    str     cr = '\n';
+        #    ;
+        #    versionStr += @'GOA_00057/ag/16.07.2018 - GOA_00057_Handheld_Outgoing_shipments / Handheld query: Outgoing shipments' + cr;
+        #
+        #
+        #    return versionStr;
+        #}
+      ENDSOURCE
+    ENDMETHODS
+  ENDVIEW
+  
+
+***Element: END

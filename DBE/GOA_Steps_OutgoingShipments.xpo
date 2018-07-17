@@ -1,0 +1,36 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: DBE
+
+; Microsoft Dynamics AX Enumtype : GOA_Steps_OutgoingShipments unloaded
+; --------------------------------------------------------------------------------
+  ENUMTYPEVERSION 1
+  
+  ENUMTYPE #GOA_Steps_OutgoingShipments
+    PROPERTIES
+      Name                #GOA_Steps_OutgoingShipments
+      UseEnumValue        #Yes
+      Origin              #{65F97415-2982-4579-BE7C-500173FA0553}
+    ENDPROPERTIES
+    
+    TYPEELEMENTS
+      #Filter
+      PROPERTIES
+        Name                #Filter
+        Label               #Filter
+        EnumValue           #0
+      ENDPROPERTIES
+      
+      #Result
+      PROPERTIES
+        Name                #Result
+        Label               #Result
+        EnumValue           #1
+      ENDPROPERTIES
+      
+    ENDTYPEELEMENTS
+  ENDENUMTYPE
+  
+
+***Element: END

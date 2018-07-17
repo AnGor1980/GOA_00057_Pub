@@ -1,0 +1,487 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: DBE
+
+; Microsoft Dynamics AX Enumtype : WHSWorkExecuteMode unloaded
+; --------------------------------------------------------------------------------
+  ENUMTYPEVERSION 1
+  
+  ENUMTYPE #WHSWorkExecuteMode
+    PROPERTIES
+      Name                #WHSWorkExecuteMode
+      Label               #@WAX1095
+      Help                #@WAX540
+      ConfigurationKey    #WHSandTMS
+      UseEnumValue        #Yes
+      Origin              #{2FDA010C-4E0D-40E1-B55E-52F4928F2C82}
+    ENDPROPERTIES
+    
+    TYPEELEMENTS
+      #Login
+      PROPERTIES
+        Name                #Login
+        Label               #@WAX549
+        EnumValue           #0
+      ENDPROPERTIES
+      
+      #Menu
+      PROPERTIES
+        Name                #Menu
+        Label               #@SYS28214
+        EnumValue           #1
+      ENDPROPERTIES
+      
+      #Shipping
+      PROPERTIES
+        Name                #Shipping
+        Label               #@SYS88262
+        EnumValue           #2
+      ENDPROPERTIES
+      
+      #ASNLicensePlate
+      PROPERTIES
+        Name                #ASNLicensePlate
+        Label               #@WAX547
+        EnumValue           #3
+      ENDPROPERTIES
+      
+      #PurchaseOrderLine
+      PROPERTIES
+        Name                #PurchaseOrderLine
+        Label               #@WAX548
+        EnumValue           #4
+      ENDPROPERTIES
+      
+      #RawMaterialPicking
+      PROPERTIES
+        Name                #RawMaterialPicking
+        Label               #@WAX535
+        EnumValue           #5
+      ENDPROPERTIES
+      
+      #FinishedGoodsPutaway
+      PROPERTIES
+        Name                #FinishedGoodsPutaway
+        Label               #@WAX536
+        EnumValue           #6
+      ENDPROPERTIES
+      
+      #CycleCounting
+      PROPERTIES
+        Name                #CycleCounting
+        Label               #@WAX510
+        EnumValue           #7
+      ENDPROPERTIES
+      
+      #CycleCountingReview
+      PROPERTIES
+        Name                #CycleCountingReview
+        Label               #@WAX588
+        EnumValue           #8
+      ENDPROPERTIES
+      
+      #AdjustmentIn
+      PROPERTIES
+        Name                #AdjustmentIn
+        Label               #@WAX1100
+        EnumValue           #9
+      ENDPROPERTIES
+      
+      #AdjustmentOut
+      PROPERTIES
+        Name                #AdjustmentOut
+        Label               #@WAX1099
+        EnumValue           #10
+      ENDPROPERTIES
+      
+      #Movement
+      PROPERTIES
+        Name                #Movement
+        Label               #@SYS547
+        EnumValue           #11
+      ENDPROPERTIES
+      
+      #MovementLicensePlate
+      PROPERTIES
+        Name                #MovementLicensePlate
+        Label               #@WAX882
+        EnumValue           #12
+      ENDPROPERTIES
+      
+      #Quarantine
+      PROPERTIES
+        Name                #Quarantine
+        Label               #@SYS58416
+        EnumValue           #13
+      ENDPROPERTIES
+      
+      #QuarantineLicensePlate
+      PROPERTIES
+        Name                #QuarantineLicensePlate
+        Label               #@WAX883
+        EnumValue           #14
+      ENDPROPERTIES
+      
+      #LicensePlateBuild
+      PROPERTIES
+        Name                #LicensePlateBuild
+        Label               #@WAX539
+        EnumValue           #15
+      ENDPROPERTIES
+      
+      #InquiryLocation
+      PROPERTIES
+        Name                #InquiryLocation
+        Label               #@WAX621
+        EnumValue           #16
+      ENDPROPERTIES
+      
+      #InquiryLicensePlate
+      PROPERTIES
+        Name                #InquiryLicensePlate
+        Label               #@WAX620
+        EnumValue           #17
+      ENDPROPERTIES
+      
+      #UserDirected
+      PROPERTIES
+        Name                #UserDirected
+        Label               #@WAX1054
+        EnumValue           #18
+      ENDPROPERTIES
+      
+      #SystemDirected
+      PROPERTIES
+        Name                #SystemDirected
+        Label               #@WAX1055
+        EnumValue           #19
+      ENDPROPERTIES
+      
+      #LogOff
+      PROPERTIES
+        Name                #LogOff
+        Label               #@WAX1091
+        EnumValue           #20
+      ENDPROPERTIES
+      
+      #ChangeWarehouse
+      PROPERTIES
+        Name                #ChangeWarehouse
+        Label               #@WAX1089
+        EnumValue           #21
+      ENDPROPERTIES
+      
+      #About
+      PROPERTIES
+        Name                #About
+        Label               #@WAX1090
+        EnumValue           #22
+      ENDPROPERTIES
+      
+      #Receiving
+      PROPERTIES
+        Name                #Receiving
+        Label               #@WAX534
+        EnumValue           #23
+      ENDPROPERTIES
+      
+      #LicensePlateReceiving
+      PROPERTIES
+        Name                #LicensePlateReceiving
+        Label               #@WAX1226
+        EnumValue           #24
+      ENDPROPERTIES
+      
+      #PurchaseOrderLineReceiving
+      PROPERTIES
+        Name                #PurchaseOrderLineReceiving
+        Label               #@WAX1227
+        EnumValue           #25
+      ENDPROPERTIES
+      
+      #PurchaseOrderLineReceivingAndLocate
+      PROPERTIES
+        Name                #PurchaseOrderLineReceivingAndLocate
+        Label               #@WAX1247
+        EnumValue           #26
+      ENDPROPERTIES
+      
+      #PurchaseOrderItemReceiving
+      PROPERTIES
+        Name                #PurchaseOrderItemReceiving
+        Label               #@WAX1228
+        EnumValue           #27
+      ENDPROPERTIES
+      
+      #ItemReceiving
+      PROPERTIES
+        Name                #ItemReceiving
+        Label               #@WAX1229
+        EnumValue           #28
+      ENDPROPERTIES
+      
+      #ContainerReceiving
+      PROPERTIES
+        Name                #ContainerReceiving
+        Label               #@WAX1230
+        EnumValue           #29
+      ENDPROPERTIES
+      
+      #BlindReceiving
+      PROPERTIES
+        Name                #BlindReceiving
+        Label               #@WAX1231
+        EnumValue           #30
+      ENDPROPERTIES
+      
+      #ReportAsFinished
+      PROPERTIES
+        Name                #ReportAsFinished
+        Label               #@WAX1232
+        EnumValue           #31
+      ENDPROPERTIES
+      
+      #ReportAsFinishedAndLocate
+      PROPERTIES
+        Name                #ReportAsFinishedAndLocate
+        Label               #@WAX1233
+        EnumValue           #32
+      ENDPROPERTIES
+      
+      #UserGrouping
+      PROPERTIES
+        Name                #UserGrouping
+        Label               #@WAX1170
+        EnumValue           #33
+      ENDPROPERTIES
+      
+      #PickPack
+      PROPERTIES
+        Name                #PickPack
+        Label               #@WAX1253
+        EnumValue           #34
+      ENDPROPERTIES
+      
+      #MovementByTemplate
+      PROPERTIES
+        Name                #MovementByTemplate
+        Label               #@WAX1294
+        EnumValue           #35
+      ENDPROPERTIES
+      
+      #StartProdOrder
+      PROPERTIES
+        Name                #StartProdOrder
+        Label               #@WAX1683
+        EnumValue           #36
+      ENDPROPERTIES
+      
+      #PurchaseOrderItemReceivingAndLocate
+      PROPERTIES
+        Name                #PurchaseOrderItemReceivingAndLocate
+        Label               #@WAX1753
+        EnumValue           #37
+      ENDPROPERTIES
+      
+      #SystemGrouping
+      PROPERTIES
+        Name                #SystemGrouping
+        Label               #@WAX1917
+        EnumValue           #38
+      ENDPROPERTIES
+      
+      #ProductionScrap
+      PROPERTIES
+        Name                #ProductionScrap
+        Label               #@WAX2260
+        EnumValue           #39
+      ENDPROPERTIES
+      
+      #ValidatedUserDirected
+      PROPERTIES
+        Name                #ValidatedUserDirected
+        Label               #@WAX2275
+        EnumValue           #40
+      ENDPROPERTIES
+      
+      #ProdLastPallet
+      PROPERTIES
+        Name                #ProdLastPallet
+        Label               #@WAX2573
+        EnumValue           #41
+      ENDPROPERTIES
+      
+      #LicensePlateLoading
+      PROPERTIES
+        Name                #LicensePlateLoading
+        Label               #@WAX2961
+        EnumValue           #42
+      ENDPROPERTIES
+      
+      #InquiryItem
+      PROPERTIES
+        Name                #InquiryItem
+        Label               #@WAX2999
+        EnumValue           #43
+      ENDPROPERTIES
+      
+      #ReprintLabel
+      PROPERTIES
+        Name                #ReprintLabel
+        Label               #@WAX3177
+        EnumValue           #44
+      ENDPROPERTIES
+      
+      #SpotCycleCounting
+      PROPERTIES
+        Name                #SpotCycleCounting
+        Label               #@WAX3230
+        EnumValue           #45
+      ENDPROPERTIES
+      
+      #ReturnOrder
+      PROPERTIES
+        Name                #ReturnOrder
+        Label               #@WAX4889
+        EnumValue           #46
+      ENDPROPERTIES
+      
+      #ReturnOrderAndLocate
+      PROPERTIES
+        Name                #ReturnOrderAndLocate
+        Label               #@WAX3268
+        EnumValue           #47
+      ENDPROPERTIES
+      
+      #WarehouseTransfer
+      PROPERTIES
+        Name                #WarehouseTransfer
+        Label               #@WAX3295
+        EnumValue           #48
+      ENDPROPERTIES
+      
+      #ClusterPicking
+      PROPERTIES
+        Name                #ClusterPicking
+        Label               #@WAX3538
+        EnumValue           #49
+      ENDPROPERTIES
+      
+      #LoadItemReceiving
+      PROPERTIES
+        Name                #LoadItemReceiving
+        Label               #@WAX3624
+        EnumValue           #50
+      ENDPROPERTIES
+      
+      #LoadItemReceivingAndLocate
+      PROPERTIES
+        Name                #LoadItemReceivingAndLocate
+        Label               #@WAX3625
+        EnumValue           #51
+      ENDPROPERTIES
+      
+      #TransferOrderItemReceiving
+      PROPERTIES
+        Name                #TransferOrderItemReceiving
+        Label               #@WAX3850
+        EnumValue           #52
+      ENDPROPERTIES
+      
+      #TransferOrderItemReceivingAndLocate
+      PROPERTIES
+        Name                #TransferOrderItemReceivingAndLocate
+        Label               #@WAX3851
+        EnumValue           #53
+      ENDPROPERTIES
+      
+      #LicensePlateBreak
+      PROPERTIES
+        Name                #LicensePlateBreak
+        Label               #@WAX3897
+        EnumValue           #54
+      ENDPROPERTIES
+      
+      #CycleCountGrouping
+      PROPERTIES
+        Name                #CycleCountGrouping
+        Label               #@WAX4082
+        EnumValue           #55
+      ENDPROPERTIES
+      
+      #DriverCheckIn
+      PROPERTIES
+        Name                #DriverCheckIn
+        Label               #@WAX4153
+        EnumValue           #56
+      ENDPROPERTIES
+      
+      #DriverCheckOut
+      PROPERTIES
+        Name                #DriverCheckOut
+        Label               #@WAX4154
+        EnumValue           #57
+      ENDPROPERTIES
+      
+      #TransferOrderLineReceiving
+      PROPERTIES
+        Name                #TransferOrderLineReceiving
+        Label               #@WAX4168
+        EnumValue           #58
+      ENDPROPERTIES
+      
+      #TransferOrderLineReceivingAndLocate
+      PROPERTIES
+        Name                #TransferOrderLineReceivingAndLocate
+        Label               #@WAX4169
+        EnumValue           #59
+      ENDPROPERTIES
+      
+      #KanbanPut
+      PROPERTIES
+        Name                #KanbanPut
+        Label               #@SYS131576
+        EnumValue           #60
+      ENDPROPERTIES
+      
+      #KanbanPutAndLocate
+      PROPERTIES
+        Name                #KanbanPutAndLocate
+        Label               #@WAX4609
+        EnumValue           #61
+      ENDPROPERTIES
+      
+      #FlushNumSeqCache
+      PROPERTIES
+        Name                #FlushNumSeqCache
+        Label               #@WAX5553
+        EnumValue           #62
+      ENDPROPERTIES
+      
+      #ChangeBatchDisposition
+      PROPERTIES
+        Name                #ChangeBatchDisposition
+        Label               #@WAX5575
+        EnumValue           #63
+      ENDPROPERTIES
+      
+      #WebRequestDefault
+      PROPERTIES
+        Name                #WebRequestDefault
+        Label               #@WAX5677
+        EnumValue           #64
+      ENDPROPERTIES
+      
+      #GOA_WHSHandheldOutgoingShipments
+      PROPERTIES
+        Name                #GOA_WHSHandheldOutgoingShipments
+        Label               #OutgoingShipments
+        EnumValue           #82
+      ENDPROPERTIES
+      
+    ENDTYPEELEMENTS
+  ENDENUMTYPE
+  
+
+***Element: END
